@@ -1,21 +1,14 @@
 <template>
-  <div class="home">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li><a href="https://github.com/bowenchen6" target="_blank">Github</a></li>
-      <li><a href="http://git.oschina.net/bwn" target="_blank">码云</a></li>
-      <li><a href="https://twitter.com/Bowen30318500" target="_blank">Twitter</a></li>
-    </ul>
+  <div class="words">
   </div>
 </template>
 
 <script>
 export default {
-  name: 'home',
+  name: 'words',
   data() {
     return {
-      msg: 'Welcome to Our English Learn App',
+      msg: 'Welcome to Our Day Words',
     };
   },
 };
@@ -23,7 +16,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-.home {
+.words {
   h1, h2 {
     font-weight: normal;
   }
