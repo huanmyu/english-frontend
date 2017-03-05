@@ -1,15 +1,30 @@
 <template>
   <div class="words">
+    <ul>
+      <li v-for="item in items">
+         <p>{{ item.name }} {{ item.phonogram }} {{ item.explanation }}</p>
+         <p class="example">{{ item.example }}</p>
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   name: 'words',
-  data() {
-    return {
-      msg: 'Welcome to Our Day Words',
-    };
+  data: () => ({
+    items: [],
+  }),
+  created() {
+    axios.get('http://127.0.0.1:8000/words')
+    .then((response) => {
+      this.items = response.data;
+    })
+    .catch((error) => {
+      console.log(error);
+    });
   },
 };
 </script>
@@ -25,10 +40,11 @@ export default {
     list-style-type: none;
     padding: 0;
     li {
-      display: inline-block;
-      margin: 0 10px;
-      a {
-        color: #42b983;
+      text-align: left;
+      margin-left: 20%;
+      color: #42b983;
+      .example {
+        margin-left: 2%;
       }
     }
   }

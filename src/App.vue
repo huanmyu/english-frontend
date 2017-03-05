@@ -5,12 +5,11 @@
         <router-link to="/" exact>
           <img class="logo" src="./assets/logo-48.png" alt="logo">
         </router-link>
-        <router-link to="/words">每日单词列表</router-link>
-        <router-link to="/register">注册</router-link>
-        <router-link to="/login">登录</router-link>
+        <router-link to="/words">DailyWordList</router-link>
+        <router-link to="/register">SignUp</router-link>
+        <router-link to="/login">SignIn</router-link>
       </nav>
     </header>
-    <img src="./assets/logo.png">
     <router-view class="view"></router-view>
   </div>
 </template>
@@ -67,6 +66,9 @@ body {
         font-weight: 300;
         letter-spacing: .075em;
         margin-right: 1.8em;
+        &:link {
+          text-decoration: none;
+        }
         &:hover {
           color: #fff;
         }
@@ -78,7 +80,7 @@ body {
           margin-right: 10px;
         }  
         &:nth-child(2){
-          margin-right: 500px;
+          margin-right: 40%;
         } 
         &:nth-child(3){
           margin-right: 0;
