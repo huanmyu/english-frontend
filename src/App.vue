@@ -5,9 +5,9 @@
         <router-link to="/" exact>
           <img class="logo" src="./assets/logo-48.png" alt="logo">
         </router-link>
-        <router-link to="/words">DailyWordList</router-link>
-        <router-link to="/register">SignUp</router-link>
-        <router-link to="/login">SignIn</router-link>
+        <router-link to="/words" class="words">DailyWordList</router-link>
+        <router-link to="/register" class="register">SignUp</router-link>
+        <router-link to="/login" class="login">SignIn</router-link>
       </nav>
     </header>
     <router-view class="view"></router-view>
@@ -17,6 +17,9 @@
 <script>
 export default {
   name: 'app',
+  data: () => ({
+    isLogin: false,
+  }),
 };
 </script>
 

@@ -34,5 +34,5 @@ npm test
 npm install sass-loader node-sass --save-dev
 
 # add axios for ajax handler
-npm install axios --save
+npm install axios --save-dev
 ```
