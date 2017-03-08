@@ -18,6 +18,7 @@ export default {
   name: 'home',
   data() {
     return {
+      msg: 'Welcome to ourself english learn app',
       isLogin: false,
     };
   },
