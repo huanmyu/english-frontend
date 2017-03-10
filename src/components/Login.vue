@@ -40,9 +40,9 @@ export default {
   methods: {
     submit() {
       if (this.credentials.username === '' || this.credentials.password === '') {
-        alert('Please Enter Your username or password');
+        this.error = 'Please Enter Your username or password';
       } else {
-        axios.post('http://127.0.0.1:8000/login', {
+        axios.post('/api/login', {
           name: this.credentials.username,
           password: this.credentials.password,
         }).then((response) => {
@@ -63,6 +63,9 @@ export default {
 
 <style lang="scss">
 .login {
+  .alert-danger {
+    color: #ff0000;
+  }
   .form-group {
     input {
       width: 200px;

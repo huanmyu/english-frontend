@@ -48,21 +48,21 @@ export default {
       username: '',
       password: '',
       repeatPassword: '',
-      isRemember: '',
+      isRemember: true,
     },
   }),
   methods: {
     submit() {
       if (this.credentials.username === '' || this.credentials.password === '' || this.credentials.repeatPassword === '') {
-        alert('Please Enter Your username or password');
+        this.error = 'Please Enter Your username or password';
       } else if (this.credentials.password !== this.credentials.repeatPassword) {
-        alert('password not same');
+        this.error = 'password not same';
       } else {
         let isRemember = 0;
         if (this.credentials.is_remember === true) {
           isRemember = 1;
         }
-        axios.post('http://127.0.0.1:8000/user', {
+        axios.post('/api/user', {
           name: this.credentials.username,
           password: this.credentials.password,
           is_remember: isRemember,
@@ -84,6 +84,9 @@ export default {
 
 <style lang="scss">
 .login {
+  .alert-danger {
+    color: #ff0000;
+  }
   .form-group {
     input {
       width: 200px;

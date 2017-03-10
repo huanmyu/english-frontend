@@ -18,7 +18,7 @@ export default {
     items: [],
   }),
   created() {
-    axios.get('http://127.0.0.1:8000/words')
+    axios.get('/api/words')
     .then((response) => {
       this.items = response.data;
     })

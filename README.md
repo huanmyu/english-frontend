@@ -36,3 +36,5 @@ npm install sass-loader node-sass --save-dev
 # add axios for ajax handler
 npm install axios --save-dev
 ```
+
+[guide](http://vuejs-templates.github.io/webpack/)
