@@ -3,7 +3,7 @@
     <header class="header">
       <nav class="inner">
         <router-link to="/" exact>
-          <img class="logo" src="./assets/logo-48.png" alt="logo">
+          <img class="logo" src="./assets/logo.png" alt="logo">
         </router-link>
         <router-link to="/words" class="words">DailyWordList</router-link>
         <router-link to="/register" class="register">SignUp</router-link>

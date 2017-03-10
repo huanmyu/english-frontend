@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <img src="../assets/logo.png">
+    <img src="../assets/home.png">
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
     <ul>
