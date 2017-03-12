@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+import auth from '../auth';
 
 export default {
   name: 'login',
@@ -62,20 +62,8 @@ export default {
         if (this.credentials.is_remember === true) {
           isRemember = 1;
         }
-        axios.post('/api/user', {
-          name: this.credentials.username,
-          password: this.credentials.password,
-          is_remember: isRemember,
-        }).then((response) => {
-          if (response.data.id <= 0) {
-            this.error = 'create account failed!';
-          } else {
-            this.$router.push('/');
-          }
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+        auth.signup(this.credentials.username, this.credentials.password, isRemember);
+        this.error = auth.user.error;
       }
     },
   },

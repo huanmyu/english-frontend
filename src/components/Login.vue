@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+import auth from '../auth';
 
 export default {
   name: 'login',
@@ -42,19 +42,9 @@ export default {
       if (this.credentials.username === '' || this.credentials.password === '') {
         this.error = 'Please Enter Your username or password';
       } else {
-        axios.post('/api/login', {
-          name: this.credentials.username,
-          password: this.credentials.password,
-        }).then((response) => {
-          if (response.data.id <= 0) {
-            this.error = 'user not found!';
-          } else {
-            this.$router.push('/');
-          }
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+        auth.login(this.credentials.username, this.credentials.password);
+        this.error = auth.user.error;
+        console.log(auth.user);
       }
     },
   },

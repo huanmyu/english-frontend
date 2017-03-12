@@ -12,27 +12,12 @@
 </template>
 
 <script>
-import axios from 'axios';
-
 export default {
   name: 'home',
   data() {
     return {
       msg: 'Welcome to ourself english learn app',
-      isLogin: false,
     };
-  },
-  created() {
-    axios.get('/api/isLogin')
-    .then((response) => {
-      console.log(response.data);
-      if (response.data.id > 0) {
-        this.isLogin = true;
-      }
-    })
-    .catch((error) => {
-      console.log(error);
-    });
   },
 };
 </script>
