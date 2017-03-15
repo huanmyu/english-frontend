@@ -83,7 +83,7 @@ export default {
     }
   }
   .form-check-group {
-    padding-right: 10%;
+    padding-right: 6%;
     padding-bottom: 10px;
   }
 }
